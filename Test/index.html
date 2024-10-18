@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Scroll Effect</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="slide-wrapper">
+            <div class="slide-image">
+                <img src="image/d17268bd8fa58d42a4a794e3145551ae.jpg" alt="image 1" id="img1">
+                <img src="image/dc8a3a2099ca7d71fb2084540367b49d.png" alt="image 2" id="img2">
+                <img src="image/dfdcfa5912414054b00ffc291c925ec3.jpg" alt="image 3" id="img3">
+                <img src="image/e75a4bfd21b67a60b7ca3c5ad2b50cdd.jpg" alt="image 4" id="img4">
+            </div>
+            <div class="slide-nav">
+                <a href="#img1"></a>
+                <a href="#img2"></a>
+                <a href="#img3"></a>
+                <a href="#img4"></a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <form class="form">
+            <div class="input-text">
+                <div class="fname">
+                    <label for="fname-ID">First Name</label>
+                    <input type="text" id="fname-ID">
+                </div>
+                <div class="lname">
+                    <label for="lname-ID">Last Name</label>
+                    <input type="text" id="lname-ID">
+                </div>
+                <div class="email">
+                    <label for="email-ID">Email</label>
+                    <input type="email" id="email-ID">
+                </div>
+                <div class="subject">
+                    <label for="subject-ID">Subject</label>
+                    <input type="text" id="subject-ID">
+                </div>
+            </div>
+            <div class="bottom-class">
+                <div class="message-box">
+                    <label for="message-ID">Message</label>
+                    <textarea id="message-ID"></textarea>
+                </div>
+                <div class="submit-box">
+                    <button type="button" class="Submit" onclick="sendmail(event)">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- EmailJS library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("Xgl34LeAYmFs2zaF0");  // Make sure to replace with your correct public key
+        })();
+    </script>
+
+    <!-- Sendmail script -->
+    <script type="text/javascript">
+        function sendmail(event) {
+            event.preventDefault(); // Prevents the form from reloading the page
+            
+            const param = {
+                name: document.querySelector('#fname-ID').value,
+                email: document.querySelector('#email-ID').value,
+                subject: document.querySelector('#subject-ID').value,
+                message: document.querySelector('#message-ID').value
+            };
+            
+            emailjs.send("service_dhf3gko", "template_3e1snyu", param)
+            .then(function(response) {
+                alert('Your email has been sent!!!');
+            }, function(error) {
+                alert('Failed to send email: ' + error);
+            });
+        }
+    </script>
+
+</body>
+</html>

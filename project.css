@@ -1,0 +1,83 @@
+body{
+    font-family:teko,'Times New Roman', Times, serif ;
+}
+header{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 15px;
+    font-family: teko,'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-size: 25px;
+    position: relative;
+}
+header a{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+header a:not(:last-child){
+    border-right: 1px solid black;
+}
+
+ a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(106, 123, 106);   
+}
+.back{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+
+}
+.back-img{
+    width: 20px;
+}
+
+
+main{
+    height: 700px;
+}
+
+
+hr{
+    margin: 25px 15px;
+}
+footer{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.likdedin-img,.x-img{
+    height: 10px;
+
+}
+.head{
+    font-size: 25px;
+    vertical-align: top;
+}
+footer img{
+    height: 30px;
+}
+.htext{
+    font-weight: 300;
+    font-size: 17px;
+}
+
+@media(max-width:1000px){
+    .education,.skills,.work-history,.certeficate,.hobby,.link-PD{
+        flex-direction: column;
+    }
+    .description{
+        padding-left: 50px;
+    }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="icon" href="images/contactfavicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+
+
+    
+</head>
+<body>
+    <header>
+      <div><a href="resume.html">Resume</a>   <a href="projects.htm">Projects</a>   <a href="contact.html">Contact</a></div>  
+       <a href="index.html"><button class="back"><img src="images/leftarrow.svg" alt="Back" class="back-img"></button></a> 
+ 
+     </header>
+
+     <main>
+
+        <div class="container-wrapper">
+            <div class="container1">
+                <h1>Contact Me</h1>
+                <p>Looking forward to hearing from you</p>
+                <h3>Phone</h3>
+                <p>+251902468877</p>
+                <h3>Email</h3>
+                <p>teklebrhandawit309@gmail.com</p>
+            </div>
+
+            <div class="container2">
+                <div>
+                    <form class="form">
+                        <div class="input-text">
+                            <div class="fname">
+                                <label for="fname-ID">First Name &ast;</label>
+                                <input type="text" id="fname-ID" required>
+                            </div>
+                            <div class="lname">
+                                <label for="lname-ID">Last Name &ast;</label>
+                                <input type="text" id="lname-ID" required>
+                            </div>
+                            <div class="email">
+                                <label for="email-ID">Email &ast;</label>
+                                <input type="email" id="email-ID" required>
+                            </div>
+                            <div class="subject">
+                                <label for="subject-ID">Subject &ast;</label>
+                                <input type="text" id="subject-ID" required>
+                            </div>
+                        </div>
+                        <div class="bottom-class">
+                            <div class="message-box">
+                                <label for="message-ID">Message &ast;</label>
+                                <textarea id="message-ID"></textarea required>
+                            </div>
+                            <div class="submit-box">
+                                <button type="button" class="Submit" onclick="sendmail(event)">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+            
+                <!-- EmailJS library -->
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                <script type="text/javascript">
+                    (function(){
+                        emailjs.init("Xgl34LeAYmFs2zaF0");  // Make sure to replace with your correct public key
+                    })();
+                </script>
+            
+                <!-- Sendmail script -->
+                <script type="text/javascript">
+                    function sendmail(event) {
+                        event.preventDefault(); // Prevents the form from reloading the page
+                        
+                        const param = {
+                            name: document.querySelector('#fname-ID').value,
+                            email: document.querySelector('#email-ID').value,
+                            subject: document.querySelector('#subject-ID').value,
+                            message: document.querySelector('#message-ID').value
+                        };
+                        
+                        emailjs.send("service_dhf3gko", "template_3e1snyu", param)
+                        .then(function(response) {
+                            alert('Your email has been sent!!!');
+                        }, function(error) {
+                            alert('Failed to send email: ' + error);
+                        });
+                    }
+                </script>
+                
+            
+            </body>
+            </html>
+            
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+        
+        
+        
+     </main>
+
+     <hr>
+
+     <footer>
+         <div>
+             <p class="head">Phone</p>
+             <p class="htext">+251902468877</p>
+ 
+         </div>
+         <div>
+             <p class="head">Email</p>
+             <p class="htext"><a href="mailto:teklebrhandawit309@gmail.com">teklebrhandawit309@gmail.com</a></p>
+ 
+         </div>
+         <div>
+             <p class="head">Follow Me</p>
+             <a href="https://www.linkedin.com/in/dawit-teklebrhan-gebrewbet/" target="_blank"><img src="images/linkedin.svg" class="linkedin-img"></a>
+             <a href="https://x.com/DawitTekle70663" target="_blank"><img src="images/x.svg" class="x-imag" ></a> 
+             <a href="https://t.me/Daw_1_6" target="_blank"><img src="images/telegram.svg" class="telegram-img"></a> 
+
+ 
+         </div>
+         <div>
+             <p class="head">Blog Page</p>
+             <p class="htext"><a href="https://teklebrhandawit309.wixsite.com/ddamy-site">Dawit'sCuriosityCraft.com</a></p>
+ 
+ 
+         </div>
+     
+     </footer>
+    
+  <script src="resume.js"></script>  
+</body>
+</html>
