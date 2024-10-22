@@ -76,6 +76,7 @@ main{
 .buttons button:hover{
     background-color: white;
     color: rgb(88, 109, 34);
+    border: 1px solid  rgb(88, 109, 34);
 }
 .buttons{
     margin-top: 15px;

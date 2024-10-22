@@ -119,10 +119,16 @@ label{
     color: rgb(106, 123, 106) ;
     border: 1px solid rgb(106, 123, 106);
 }
-
-
-
-
+@media(max-width:840px){
+    .container-wrapper{
+        grid-template-columns: 1fr;
+        align-content: center;
+    }
+    main{
+        height: 900px;
+    }
+    
+}
 
 hr{
     margin: 25px 15px;
